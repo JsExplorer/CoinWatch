@@ -1,0 +1,24 @@
+.header .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 4rem auto;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header h1 {
+    padding: 1rem 0;
+    color: darkcyan;
+}
+
+.header h2 {
+    color: black;
+}
+
+.header img {
+    max-width: 20%;
+    max-height: 20%;
+    margin: auto;
+    padding: left;
+}
