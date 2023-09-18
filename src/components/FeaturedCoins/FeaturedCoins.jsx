@@ -19,8 +19,8 @@ const FeaturedList = () => {
     if(!coins) return null;
 
     return (
-        <div>
-            <h2>See the top 10 cryptocurrencies below</h2>
+        <div className='mt-10'>
+            <h1 className='text-2xl mb-2'>See the top 10 cryptocurrencies below</h1>
             {coins.map((coin, index) => (
             <FeaturedCoin
             coin={coin}

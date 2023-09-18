@@ -22,7 +22,7 @@ const TrendingCoins = () => {
             {TrendingCoins.map((coin, index) => (
                 <TrendingCoin
                 key={index}
-                coin={coin}
+                coin={coin.item}
                 />
             ))}
             </div>

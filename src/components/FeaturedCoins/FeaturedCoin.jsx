@@ -1,26 +1,28 @@
-import { FiArrowUp, FiArrowDown } from 'react-icons/fi'
+import { FiArrowUpRight, FiArrowDownRight } from 'react-icons/fi'
+import numFormat from '../Utilities/Utilis'
+import { Link } from 'react-router-dom'
 
 const FeaturedCoin = ( {coin} ) => {
     return (
-    <div className='grid grid-cols-3 sm:grid-cols-4 font-semibold p-2 rounded border-gray-200 border-5 hover:bg-green-200'>
-        <div className='flex items-center gap-2 w-full'></div>
-        <img src={coin.image} alt=''/>
-        <h3>{coin.name}</h3>
-        <p>${coin.current_price.toLocaleString()}</p>
-    {coin.price_change_percentage_24h < 0 ? (
-        <span className='red'>
-            <FiArrowDown />
-            {coin.price_change_percentage_24h.toFixed(2)}%
-        </span>
-        ) : 
-        (
-            <span className='green'>
-            <FiArrowUp />
-            {coin.price_change_percentage_24h.toFixed(2)}%
-        </span>
-        )
-    }
-    </div>
+        <Link to={`/coin/${coin.id}`}>
+            <div className='grid grid-cols-3 sm:grid-cols-3 font-semibold p-2 rounded border-gray-200 border-t mb-2 hover:bg-green-200'>
+                <div className='flex items-center gap-2 w-full'>
+                    <img className='w-8' src={coin.image} alt=''/>
+                    <p>{coin.name}</p>
+                    <span className='text-s'>({coin.symbol})</span>
+                <span className={`flex gap-1
+                ${coin.price_change_percentage_24h < 0 ? 'text-red-400' : 'text-green-400'}`}>
+                {coin.price_change_percentage_24h}%
+                {coin.price_change_percentage_24h < 0 ? <FiArrowDownRight /> : <FiArrowUpRight />}
+                </span>
+                </div>
+                <span className='w-full text-center'>${numFormat(coin.current_price)}</span>
+                <div>
+                    <p className='font-semibold'>Market Cap</p>
+                    <span>${numFormat(coin.market_cap)}</span>
+                </div>
+            </div>
+        </Link>
     )
 }
 
