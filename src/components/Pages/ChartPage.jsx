@@ -5,7 +5,7 @@ const ChartPage = () => {
     return (
         <div className='wrapper-container mt-8'>
             <HistoryChart />
-            {/* <CoinInfo /> */}
+            <CoinInfo />
         </div>
     )
 }
