@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import FeaturedCoin from './FeaturedCoin';
 
 const FeaturedList = () => {
-    const [coins, setCoins] = useState(null)
+    const [coins, setCoins] = useState([])
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -16,11 +16,9 @@ const FeaturedList = () => {
         fetchApi();
         }, [])
 
-    if(!coins) return null;
-
     return (
         <div className='mt-10'>
-            <h1 className='text-2xl mb-2'>See the top 10 cryptocurrencies below</h1>
+            <h1 className='text-2xl mb-2 text-gray-700 font-semibold'>See the top 10 cryptocurrencies below</h1>
             {coins.map((coin, index) => (
             <FeaturedCoin
             coin={coin}

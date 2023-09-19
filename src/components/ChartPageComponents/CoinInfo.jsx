@@ -32,10 +32,10 @@ const CoinInfo = () => {
     return (
         <div className='my-8'>
             <div className='flex items-center gap-3 font-semibold my-5'>
-                <img src={info.image.small} alt =''/>
-                <h2>{info.name}</h2>
+                <img src={info?.image?.small} alt ={info?.name}/>
+                <h2>{info?.name}</h2>
             </div>
-        <p className='my-5 text-gray-600 [&>a]:text-blue-500 [&>a]:underline' dangerouslySetInnerHTML={{__html: info.description.en}}></p>
+        <p className='my-5 text-gray-600 [&>a]:text-blue-500 [&>a]:underline' dangerouslySetInnerHTML={{__html: info?.description?.en}}></p>
         </div>
     )
 }

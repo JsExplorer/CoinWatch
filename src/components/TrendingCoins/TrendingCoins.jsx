@@ -18,10 +18,10 @@ const TrendingCoins = () => {
     return (
         <div className='mt-8'>
             <div>
-            <h1 className='text-2xl mb-2'>Trending Coins</h1>
-            {TrendingCoins.map((coin, index) => (
+            <h1 className='text-2xl mb-2 text text-red-500 font-semibold'>Trending Coins</h1>
+            {TrendingCoins.map((coin) => (
                 <TrendingCoin
-                key={index}
+                key={coin.id}
                 coin={coin.item}
                 />
             ))}

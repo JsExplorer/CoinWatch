@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { GoRocket } from 'react-icons/go'
 
 const NavBar = () => {
     let navigate = useNavigate();
@@ -10,6 +11,7 @@ const NavBar = () => {
                         <span className="text-green-500">Coin</span>
                         <span className="text-blue-500">Watch</span>
                     </button>
+                    <span>{<GoRocket />}</span>
                 </div>
             </div>
         </div>
