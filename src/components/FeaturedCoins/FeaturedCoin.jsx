@@ -10,15 +10,15 @@ const FeaturedCoin = ( {coin} ) => {
                 <img className='w-8' src={coin.image} alt=''/>
                 <p>{coin.name}</p>
                 <span className='text-s'>({coin.symbol})</span>
-            <span className={`flex gap-1
+            <span className={`flex gap-0.5
             ${coin.price_change_percentage_24h < 0 ? 'text-red-400' : 'text-green-400'}`}>
             {coin.price_change_percentage_24h}%
             {coin.price_change_percentage_24h < 0 ? <FiArrowDownRight /> : <FiArrowUpRight />}
             </span>
             </div>
-            <span className='w-full text-center'>${numFormat(coin.current_price)}</span>
+            <span className='flex items-center w-full text-center'>${numFormat(coin.current_price)}</span>
             <div>
-                <p className='font-semibold'>Market Cap</p>
+                <p className='flex items-center font-semibold'>Market Cap</p>
                 <span>${numFormat(coin.market_cap)}</span>
             </div>
         </div>
