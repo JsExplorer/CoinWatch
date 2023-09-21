@@ -7,7 +7,7 @@ const HomePage = () => {
             <div className='wrapper-container'>
                 <TrendingCoins />
                 <div>
-                 <ToggleSwitch />
+                 {/* <ToggleSwitch /> */}
                 </div>
                 <FeaturedCoins />
             </div>
