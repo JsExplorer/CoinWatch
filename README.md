@@ -2,7 +2,7 @@
 
 CoinWatch is a cryptocurrency tracking website for latest price on top 10 cryptocurrencies and top 7 trending cryptocurrencies. It is added with a portfolio management feature that allows users to track and manage their cryptocurrency investments. With real-time cryptocurrency price data, CoinWatch provides users with insights into their portfolio's performance.
 
-## Planning 
+## Planning
 - [Trello](https://trello.com/b/H3sSYjBG/coinwatch)
 - [Figma](https://www.figma.com/file/Ds8Pv7Hxlmd3kIlewPyQuM/Untitled?type=design&node-id=0-1&mode=design)
 
@@ -20,14 +20,20 @@ Home page - Chart page - Portfolio page
    
 ## Practiced using Airtable for CRUD (successfully completed CR portions only)
 CoinWatch leverages Airtable for Create and Read (CR) operations. Users can create and view their cryptocurrency holdings through the app. Further development can include Update and Delete operations.
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/main
 ## Technology Stack and CSS libs used
 CoinWatch is built using the following technologies and libraries:
 - React with vite: Frontend framework with user interface.
 - Airtable: Used for storing and retrieving cryptocurrency portfolio data.
 - Tailwind CSS and DaisyUI (Tailwind CSS component library for additional styling).
 - CoinGecko API: Provides real-time cryptocurrency price data.
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/main
 ## Possible Future Developments / Features
 CoinWatch has the potential for future enhancements and features, including:
 - User Authentication: Implement user accounts for saving portfolios and data.
