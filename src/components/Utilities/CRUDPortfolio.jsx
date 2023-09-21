@@ -33,7 +33,7 @@ async function PostPortfolio(data) {
   return newData;
 }
 
-async function deletePortfolio(id) {
+async function DeletePortfolio(id) {
 	const response = await fetch(`${API_URL}/${id}`, {
 		method: "DELETE",
 		headers: {
@@ -45,4 +45,4 @@ async function deletePortfolio(id) {
 	}
 }
 
-export { GetPortfolio, PostPortfolio, deletePortfolio };
+export { GetPortfolio, PostPortfolio, DeletePortfolio };

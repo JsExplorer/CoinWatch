@@ -12,6 +12,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import Skeleton from "../Utilities/Skeleton";
 
 
 
@@ -26,36 +27,49 @@ ChartJS.register(
 );
 
 const HistoryChart = () => {
-  const [Chart, setChart] = useState({})
+  const [Chart, setChart] = useState({});
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
       const fetchChart = async () => {
-        const response = await fetch(
-          `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7` 
-        );
-        const data = await response.json();
-        setChart(data);
+        try {
+          const response = await fetch(
+            `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7` 
+          );
+          const data = await response.json();
+          setChart(data);
+          setLoading(false);
+        } catch (error) {
+          console.error('Error fetching data;', error);
+        }
       };
       fetchChart();
       }, [id])
-      console.log(Chart);
+
+      if (loading) {
+        return (
+          <div>
+            <Skeleton />
+          </div>
+        )
+      }
 
       const historyChartData = Chart?.prices?.map(value => ({x: value[0], y: value[1].toFixed(2)}))
       console.log(historyChartData);
 
-     const options = {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'top',
+      const options = {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: `History chart of ${id}`,
+            },
           },
-          title: {
-            display: true,
-            text: `History chart of ${id}`,
-          },
-        },
-      };
+        };
 
       const data = {
         labels: historyChartData?.map(value=> moment(value.x).format('ll')),
@@ -76,11 +90,11 @@ const HistoryChart = () => {
       };
 
 
-return (
-  <div className='my-8'>
-    <Line options={options} data={data} />
-  </div>
-)
+      return (
+        <div className='my-8'>
+          <Line options={options} data={data} />
+        </div>
+      )
 }
 
 export default HistoryChart
