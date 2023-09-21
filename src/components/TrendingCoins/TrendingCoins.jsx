@@ -13,8 +13,6 @@ const TrendingCoins = () => {
         fetchApi();
         }, [])
 
-        console.log (TrendingCoins);
-
     return (
         <div className='mt-8'>
             <div>

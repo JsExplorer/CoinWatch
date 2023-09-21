@@ -1,5 +1,5 @@
 import { FiArrowUpRight, FiArrowDownRight } from 'react-icons/fi'
-import numFormat from '../Utilities/Utilis'
+import { numFormat } from '../Utilities/Utilis'
 import { Link } from 'react-router-dom'
 
 const FeaturedCoin = ( {coin} ) => {

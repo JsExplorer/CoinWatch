@@ -1,4 +1,4 @@
-import numFormat from "../Utilities/Utilis";
+import { numFormat } from "../Utilities/Utilis";
 
 const Portfolio = ({ name, totalValue }) => {
     return (
@@ -10,4 +10,4 @@ const Portfolio = ({ name, totalValue }) => {
     );
   };
   
-  export default Portfolio;
+export default Portfolio;
