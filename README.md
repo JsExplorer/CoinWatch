@@ -10,26 +10,24 @@ I utilised Trello for project planning and wireframes to visualize the app's str
 Home page - Chart page - Portfolio page
     
 ## Featured Components
-1. Real-Time Price Data: CoinWatch fetches real-time cryptocurrency price data from CoinGecko.
-2. Search Functionality: Users can search for specific cryptocurrencies to add to their portfolio.
-3. Total Portfolio Value: The app calculates and displays the total value of the user's cryptocurrency portfolio. <<Utilised Airtable database>>
-5. Responsive Design: CoinWatch is designed to work seamlessly on both desktop and mobile devices.
+- Real-Time Price Data: CoinWatch fetches real-time cryptocurrency price data from CoinGecko.
+- Search Functionality: Users can search for specific cryptocurrencies to add to their portfolio.
+- Total Portfolio Value: The app calculates and displays the total value of the user's cryptocurrency portfolio. <<Utilised Airtable database>>
+- Responsive Design: CoinWatch is designed to work seamlessly on both desktop and mobile devices.
    
 ## Practiced using Airtable for CRUD (successfully completed CR portions only)
 CoinWatch leverages Airtable for Create and Read (CR) operations. Users can create and view their cryptocurrency holdings through the app. Further development can include Update and Delete operations.
 
 ## Technology Stack and CSS libs used
 CoinWatch is built using the following technologies and libraries:
-
-React with vite: Frontend framework with user interface.
-Airtable: Used for storing and retrieving cryptocurrency portfolio data.
-Tailwind CSS and DaisyUI (Tailwind CSS component library for additional styling).
-CoinGecko API: Provides real-time cryptocurrency price data.
+- React with vite: Frontend framework with user interface.
+- Airtable: Used for storing and retrieving cryptocurrency portfolio data.
+- Tailwind CSS and DaisyUI (Tailwind CSS component library for additional styling).
+- CoinGecko API: Provides real-time cryptocurrency price data.
 
 ## Possible Future Developments / Features
 CoinWatch has the potential for future enhancements and features, including:
-
-User Authentication: Implement user accounts for saving portfolios and data.
-Update and Delete Operations: Extend CRUD functionality to allow users to update and delete holdings.
-Multi-Currency Support: Allow users to track portfolios in various fiat currencies.
-News Integration: Display cryptocurrency news and updates within the app.
+- User Authentication: Implement user accounts for saving portfolios and data.
+- Update and Delete Operations: Extend CRUD functionality to allow users to update and delete holdings.
+- Multi-Currency Support: Allow users to track portfolios in various fiat currencies.
+- News Integration: Display cryptocurrency news and updates within the app.
