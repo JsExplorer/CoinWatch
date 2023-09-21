@@ -1,10 +1,12 @@
-# CoinWatch
+# [CoinWatch](coin-watch-psi.vercel.app)
 
 CoinWatch is a cryptocurrency tracking website for latest price on top 10 cryptocurrencies and top 7 trending cryptocurrencies. It is added with a portfolio management feature that allows users to track and manage their cryptocurrency investments. With real-time cryptocurrency price data, CoinWatch provides users with insights into their portfolio's performance.
 
 ## Planning 
-- [Trello] (https://trello.com/b/H3sSYjBG/coinwatch)
-I utilised Trello for project planning and wireframes to visualize the app's structure and features. Trello boards helped manage tasks and keep the project organized. Wireframes provided a blueprint for the app's layout and functionality.
+- [Trello](https://trello.com/b/H3sSYjBG/coinwatch)
+- [Figma](https://www.figma.com/file/Ds8Pv7Hxlmd3kIlewPyQuM/Untitled?type=design&node-id=0-1&mode=design)
+
+I utilised Trello for project planning and Figma for wireframes to visualize the app's structure and features. Trello boards helped manage tasks and keep the project organized. THe simple Wireframes provided a blueprint for the app's layout and functionality.
 
 ## Basic layout
 3 pages 
