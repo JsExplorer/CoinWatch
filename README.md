@@ -2,7 +2,8 @@
 
 CoinWatch is a cryptocurrency tracking website for latest price on top 10 cryptocurrencies and top 7 trending cryptocurrencies. It is added with a portfolio management feature that allows users to track and manage their cryptocurrency investments. With real-time cryptocurrency price data, CoinWatch provides users with insights into their portfolio's performance.
 
-## Planning https://trello.com/invite/b/H3sSYjBG/ATTIeb226d9d64f613cfeff5f208cd7bc8b7187330EE/coinwatch
+## Planning 
+- [Trello] (https://trello.com/b/H3sSYjBG/coinwatch)
 I utilised Trello for project planning and wireframes to visualize the app's structure and features. Trello boards helped manage tasks and keep the project organized. Wireframes provided a blueprint for the app's layout and functionality.
 
 ## Basic layout
