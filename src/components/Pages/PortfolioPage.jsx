@@ -1,10 +1,10 @@
-import { GetPortfolio, PostPortfolio } from "../Utilities/CRUDPortfolio"
+import { GetPortfolio, PostPortfolio, DeletePortfolio, AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME } from "../Utilities/CRUDPortfolio"
 import { useState, useEffect } from 'react'
 import Portfolio from "./Portfolio"
 import Skeleton from "../Utilities/Skeleton"
 import SearchBar from "../Utilities/SearchBar"
 
-const UserPage = ( ) => {
+const PortfolioPage = ( ) => {
   const [portfolio, setPortfolio] = useState([])
   const [formData, setFormData] = useState({
     Name: "",
@@ -18,6 +18,8 @@ const UserPage = ( ) => {
   const [coinData, setCoinData] = useState([]);
   const [searchInput, setSearchInput] = useState('');
   const [searchResult, setSearchResult] = useState(null);
+  const [deleteName, setDeleteName] = useState("");
+
 
   const calculateTotalValues = (records) => {
     const calculatedTotalValues = {};
@@ -124,6 +126,42 @@ const UserPage = ( ) => {
     }
   };
 
+  console.log(portfolio);
+
+  const handleDelete = async () => {
+    try {
+      // Check if the portfolio is an array and not empty
+      if (!Array.isArray(portfolio?.records) || portfolio?.records.length === 0) {
+        console.log("Portfolio is empty or not an array.");
+        return;
+      }
+  
+      // Identify IDs for the specified targetName
+      const idsToDelete = portfolio?.records
+        .filter((record) => record.fields.Name === deleteName)
+        .map((record) => record.id);
+  
+      console.log("idsToDelete:", idsToDelete); // Log the IDs to be deleted
+  
+      if (idsToDelete.length === 0) {
+        console.log(`No records found for ${deleteName}`);
+        return;
+      }
+  
+      // Send a POST request to Airtable to delete the identified IDs
+      for (const id of idsToDelete) {
+        await DeletePortfolio(AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME, id)
+      }
+
+      console.log(`Records for ${deleteName} deleted successfully.`);
+      
+      // Clear the deleteName input field after successful deletion
+      setDeleteName("");
+    } catch (error) {
+      console.error("Error deleting records:", error);
+    }
+  };
+
   if (loading){
     return (
       <Skeleton />
@@ -172,19 +210,6 @@ const UserPage = ( ) => {
           />
         </label>
         <label>
-          {/* Conditionally render the "Total Value" input field */}
-          {/* {formData.Quantity > 0 && formData.Price > 0 ? (
-            <input
-              className="shadow appearance-none border border-red-500 rounded py-1 px-2 text-gray-100 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              name="TotalValue" 
-              value={formData.Quantity * formData.Price} 
-              onChange={handleChange} 
-            />
-          ) : (
-            // If either Quantity or Price is not greater than 0, display nothing
-            null
-          )} */}
-           {/* Conditionally render the calculated "Total Value" */}
           {formData.Quantity > 0 && formData.Price > 0 && (
             <div className="shadow appearance-none rounded py-1 px-2 text-gray-100 mb-3 leading-tight focus:outline-none focus:shadow-outline">
               Total Value: ${formData.Quantity * formData.Price}
@@ -206,7 +231,7 @@ const UserPage = ( ) => {
           searchResult={searchResult}
         />
       </div>
-      <div className="mt-10">
+      <div className="my-5">
             {Object.keys(totalValues).map((name) => (
             <Portfolio 
               key={name}
@@ -215,8 +240,26 @@ const UserPage = ( ) => {
             />
           ))}
       </div>
+      <div className="font-semibold ml-3 mt-4">
+        <label>
+          Enter the Name of the Portfolio to be deleted:
+          <input
+            type="text"
+            name="deleteName"
+            value={deleteName}
+            onChange={(e) => setDeleteName(e.target.value)}
+            className="shadow appearance-none border border-red-500 rounded py-1 px-2 text-gray-100 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </label>
+        <button
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+          onClick={handleDelete}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   )
 }
 
-export default UserPage
+export default PortfolioPage

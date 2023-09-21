@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const BASE_URL = 'https://api.airtable.com/v0';
 const AIRTABLE_API_KEY = 'patI4kk7dafbqUIZ4.a95b22f12008b4aa88b669db515a62b0196f0704941a8e83fbd02df8d4890104';
 const AIRTABLE_BASE_ID = 'appV8FQZlVGvu7g4T';
@@ -33,16 +31,46 @@ async function PostPortfolio(data) {
   return newData;
 }
 
-async function DeletePortfolio(id) {
-	const response = await fetch(`${API_URL}/${id}`, {
-		method: "DELETE",
-		headers: {
-			Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-		},
-	});
-	if (response.ok) {
-		return true;
-	}
-}
+// async function DeletePortfolio(id) {
+// 	const response = await fetch(`${API_URL}/${id}`, {
+// 		method: "DELETE",
+// 		headers: {
+// 			Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+// 		},
+// 	});
+// 	if (response.ok) {
+// 		return true;
+// 	}
+// }
 
-export { GetPortfolio, PostPortfolio, DeletePortfolio };
+// CRUDPortfolio.jsx
+
+const DeletePortfolio = async (apiKey, baseId, tableName, recordId) => {
+  const url = `https://api.airtable.com/v0/${baseId}/${tableName}/${recordId}`;
+
+  try {
+    const response = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+    });
+
+    if (response.status === 404) {
+      console.error(`Record with ID ${recordId} not found.`);
+    } else if (!response.ok) {
+      console.error(`Error deleting record with ID ${recordId}`);
+    } else {
+      console.log(`Record with ID ${recordId} deleted successfully.`);
+    }
+  } catch (error) {
+    console.error("Error deleting record:", error);
+  }
+};
+
+
+
+
+
+
+export { GetPortfolio, PostPortfolio, DeletePortfolio,   AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME  };

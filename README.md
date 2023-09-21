@@ -20,20 +20,14 @@ Home page - Chart page - Portfolio page
    
 ## Practiced using Airtable for CRUD (successfully completed CR portions only)
 CoinWatch leverages Airtable for Create and Read (CR) operations. Users can create and view their cryptocurrency holdings through the app. Further development can include Update and Delete operations.
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/main
 ## Technology Stack and CSS libs used
 CoinWatch is built using the following technologies and libraries:
 - React with vite: Frontend framework with user interface.
 - Airtable: Used for storing and retrieving cryptocurrency portfolio data.
 - Tailwind CSS and DaisyUI (Tailwind CSS component library for additional styling).
 - CoinGecko API: Provides real-time cryptocurrency price data.
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/main
 ## Possible Future Developments / Features
 CoinWatch has the potential for future enhancements and features, including:
 - User Authentication: Implement user accounts for saving portfolios and data.
