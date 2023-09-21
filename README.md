@@ -10,7 +10,10 @@ I utilised Trello for project planning and Figma for wireframes to visualize the
 
 ## Basic layout
 3 pages 
-Home page - Chart page - Portfolio page
+- Home page - Chart page - Portfolio page
+![Home page](https://github.com/JsExplorer/CoinWatch/assets/93700857/4d549c08-721d-432a-aadf-9d46630939fa)
+![Chart page](https://github.com/JsExplorer/CoinWatch/assets/93700857/fea120e5-e54a-47b0-9748-7f80a40dbc35)
+![Portfolio page](https://github.com/JsExplorer/CoinWatch/assets/93700857/8d02685f-a6a4-430c-995c-c4f5b085503b)
     
 ## Featured Components
 - Real-Time Price Data: CoinWatch fetches real-time cryptocurrency price data from CoinGecko.
