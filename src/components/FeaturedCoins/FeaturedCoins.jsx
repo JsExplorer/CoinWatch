@@ -31,7 +31,7 @@ const FeaturedList = () => {
 
       return (
           <div className='mt-10'>
-              <h1 className='text-2xl mb-2 text-gray-300 font-semibold'>Top 10 cryptocurrencies</h1>
+              <h1 className='text-2xl mb-2 text-gray-400 font-semibold'>Top 10 cryptocurrencies</h1>
               {coins.map((coin, index) => (
               <FeaturedCoin
               coin={coin}

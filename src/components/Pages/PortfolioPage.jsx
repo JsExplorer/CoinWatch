@@ -192,7 +192,7 @@ const PortfolioPage = ( ) => {
           />
         </label>
         <label>
-          Price:${" "}
+          Price (USD)$:{" "}
           <input 
           className="shadow appearance-none border border-red-500 rounded py-1 px-2 text-gray-100 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           name="Price" 
@@ -242,7 +242,7 @@ const PortfolioPage = ( ) => {
       </div>
       <div className="font-semibold ml-3 mt-4">
         <label>
-          Enter the Name of the Portfolio to be deleted:
+          Enter the Name of the Portfolio to be deleted : {""}
           <input
             type="text"
             name="deleteName"

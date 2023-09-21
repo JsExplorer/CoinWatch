@@ -18,10 +18,10 @@ Home page - Chart page - Portfolio page
 - Total Portfolio Value: The app calculates and displays the total value of the user's cryptocurrency portfolio. <<Utilised Airtable database>>
 - Responsive Design: CoinWatch is designed to work seamlessly on both desktop and mobile devices.
    
-## Practiced using Airtable for CRUD (successfully completed CR portions only)
-CoinWatch leverages Airtable for Create and Read (CR) operations. Users can create and view their cryptocurrency holdings through the app. Further development can include Update and Delete operations.
+## Practiced using Airtable for CRUD operations (successfully completed C, R and D portions only)
+CoinWatch leverages Airtable for Create, Read and Delete (CRD) operations. Users can create and view their cryptocurrency holdings through the app. Further development can include Update operation.
 
-## Technology Stack and CSS libs used
+## Technology Stack and CSS libraries used
 CoinWatch is built using the following technologies and libraries:
 - React with vite: Frontend framework with user interface.
 - Airtable: Used for storing and retrieving cryptocurrency portfolio data.
@@ -31,6 +31,7 @@ CoinWatch is built using the following technologies and libraries:
 ## Possible Future Developments / Features
 CoinWatch has the potential for future enhancements and features, including:
 - User Authentication: Implement user accounts for saving portfolios and data.
-- Update and Delete Operations: Extend CRUD functionality to allow users to update and delete holdings.
+- Update Operation: Extend CRUD functionality to allow users to update holdings.
 - Multi-Currency Support: Allow users to track portfolios in various fiat currencies.
 - News Integration: Display cryptocurrency news and updates within the app.
+- Chart with selective timeframes : Allow users to select the different charts for their analysis. 
