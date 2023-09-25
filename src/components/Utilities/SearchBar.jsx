@@ -1,6 +1,4 @@
 // SearchBar.jsx
-import React from 'react';
-
 const SearchBar = ({ searchInput, setSearchInput, handleSearch, searchResult }) => {
   return (
     <div className="bg-gray-600 rounded-lg shadow-md p-2 space-y-2">

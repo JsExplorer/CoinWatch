@@ -4,6 +4,22 @@ import Portfolio from "./Portfolio"
 import Skeleton from "../Utilities/Skeleton"
 import SearchBar from "../Utilities/SearchBar"
 
+const calculateTotalValues = (records) => {
+  const calculatedTotalValues = {};
+  records?.forEach((user) => {
+    const { Name, Price, Quantity } = user.fields;
+    const totalValue = Price * Quantity;
+
+    if (calculatedTotalValues[Name]) {
+      calculatedTotalValues[Name] += totalValue;
+    } else {
+      calculatedTotalValues[Name] = totalValue;
+    }
+  });
+
+  return calculatedTotalValues;
+};
+
 const PortfolioPage = ( ) => {
   const [portfolio, setPortfolio] = useState([])
   const [formData, setFormData] = useState({
@@ -21,38 +37,29 @@ const PortfolioPage = ( ) => {
   const [deleteName, setDeleteName] = useState("");
 
 
-  const calculateTotalValues = (records) => {
-    const calculatedTotalValues = {};
-    records?.forEach((user) => {
-      const { Name, Price, Quantity } = user.fields;
-      const totalValue = Price * Quantity;
-
-      if (calculatedTotalValues[Name]) {
-        calculatedTotalValues[Name] += totalValue;
-      } else {
-        calculatedTotalValues[Name] = totalValue;
-      }
-    });
-
-    return calculatedTotalValues;
+ 
+  
+  const fetchPortfolio = async () => {
+    try {
+      const data = await GetPortfolio();
+      setPortfolio(data);
+      setLoading(false); // Set loading to false when data is fetched
+      console.log(data);
+      
+      // Calculate total values here after fetching the data
+      const calculatedTotalValues = calculateTotalValues(data.records);
+      setTotalValues(calculatedTotalValues); // Update the state with calculated totalValues
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   useEffect(() => {
-    const fetchPortfolio = async () => {
-      try {
-        const data = await GetPortfolio();
-        setPortfolio(data);
-        setLoading(false); // Set loading to false when data is fetched
-        console.log(data);
-
-        // Calculate total values here after fetching the data
-        const calculatedTotalValues = calculateTotalValues(data.records);
-        setTotalValues(calculatedTotalValues); // Update the state with calculated totalValues
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
     fetchPortfolio();
+    const intervalId = setInterval(fetchPortfolio, 5000); // Every 5 seconds
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleChange = (event) => {
@@ -192,7 +199,7 @@ const PortfolioPage = ( ) => {
           />
         </label>
         <label>
-          Price (USD)$:{" "}
+          Price $(USD):{" "}
           <input 
           className="shadow appearance-none border border-red-500 rounded py-1 px-2 text-gray-100 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           name="Price" 

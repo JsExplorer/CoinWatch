@@ -5,7 +5,7 @@ const Portfolio = ({ name, totalValue }) => {
       <div className='grid grid-rows-2 mt-5 border border-solid border-blue-300 p-3'>
         <span>Name : {name}</span>
 
-        <span>Portfolio Value : $USD{numFormat(totalValue)}</span>
+        <span>Portfolio Value : $USD{""} {numFormat(totalValue)}</span>
       </div>
     );
   };

@@ -1,4 +1,4 @@
-const Skeleton = ( {className} ) => {
+const Skeleton = () => {
   return (
     <div className='wrapper-container w-full mt-5'>
         <span className="loading loading-spinner text-primary"></span>

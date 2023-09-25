@@ -31,28 +31,15 @@ async function PostPortfolio(data) {
   return newData;
 }
 
-// async function DeletePortfolio(id) {
-// 	const response = await fetch(`${API_URL}/${id}`, {
-// 		method: "DELETE",
-// 		headers: {
-// 			Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-// 		},
-// 	});
-// 	if (response.ok) {
-// 		return true;
-// 	}
-// }
 
-// CRUDPortfolio.jsx
-
-const DeletePortfolio = async (apiKey, baseId, tableName, recordId) => {
-  const url = `https://api.airtable.com/v0/${baseId}/${tableName}/${recordId}`;
+const DeletePortfolio = async (AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME, recordId) => {
+  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}/${recordId}`;
 
   try {
     const response = await fetch(url, {
       method: "DELETE",
       headers: {
-        Authorization: `Bearer ${apiKey}`,
+        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
       },
     });
 
@@ -67,10 +54,6 @@ const DeletePortfolio = async (apiKey, baseId, tableName, recordId) => {
     console.error("Error deleting record:", error);
   }
 };
-
-
-
-
 
 
 export { GetPortfolio, PostPortfolio, DeletePortfolio,   AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME  };
